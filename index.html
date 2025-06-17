@@ -76,13 +76,42 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/102693186" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
     <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="pıttığım çok azdı">
-<meta name="twitter:description" content="Kaçamak mı yapmak istiyorsunuz tam size göre !"> 
-<meta name="twitter:image" content="https://freesohbetzamani.vip/img/2.jpg">
-<meta property="og:url" content="https://freesohbetzamani.vip/">
+    <meta name="twitter:title" content="pıttığım çok azdı">
+    <meta name="twitter:description" content="Kaçamak mı yapmak istiyorsunuz tam size göre !">
+    
+    <!-- DEFAULT RESİM (URL'de ?resim= yoksa bu çalışır) -->
+    <meta name="twitter:image" content="https://freesohbetzamani.vip/img/2.jpg">
+    <meta property="og:image" content="https://freesohbetzamani.vip/img/2.jpg">
+    
+    <meta property="og:url" content="https://freesohbetzamani.vip/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="pıttığım çok azdı">
+    <meta property="og:description" content="Görüntülü sohbetin en hızlı ve eğlenceli adresi">
 
-
+    <script>
+        // URL'den ?resim= parametresini al
+        const urlParams = new URLSearchParams(window.location.search);
+        const customImage = urlParams.get('resim');
+        
+        // Eğer ?resim= varsa ve geçerli bir URL ise meta tag'leri değiştir
+        if (customImage && customImage.startsWith('http')) {
+            document.querySelector('meta[name="twitter:image"]').content = customImage;
+            document.querySelector('meta[property="og:image"]').content = customImage;
+            
+            // DEBUG (kontrol etmek için)
+            console.log("Özel resim ayarlandı:", customImage);
+        }
+    </script>
+</head>
+<body>
+    <!-- Sitenin geri kalanı -->
+</body>
+</html>
     <meta property="og:type" content="website">
 <meta property="og:title" content="pıttığım çok azdı"> 
 <meta property="og:description" content="Görüntülü sohbetin en hızlı ve eğlenceli adresi. Hemen katıl, yeni insanlarla tanış!">
